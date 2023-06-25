@@ -1,0 +1,28 @@
+<p>Page de création de ToDo</p>
+<div *ngFor="let toDo of ToDoList">
+    <div>
+        <h2>{{toDo.title}}</h2>
+        <span>{{toDo.description}}</span>
+        <br>
+        <span>{{toDo.date}}</span>
+        <br>
+        <button (click) ="editToDo()">Edit</button>
+    </div>
+
+</div>
+
+<form [formGroup]="form" (ngSubmit)="addToDo()">
+    <label for="title">title : </label>
+    <input id="title" type="text" formControlName="title" />
+
+    <label for="description">description : </label>
+    <input id="description" type="text" formControlName="description" />
+
+    <label for="date">Date : </label>
+    <input id="date" type="date" formControlName="date" />
+
+    <button>Click</button>
+
+</form>
+
+<button (click)="console()">console</button>
